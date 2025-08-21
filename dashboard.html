@@ -8,326 +8,348 @@
 </head>
 <body>
     <div class="dashboard">
-        <header class="header">
-            <div class="header-content">
+        <aside class="sidebar">
+            <div class="sidebar-header">
                 <div class="logo">
                     <h1>DreamTeam</h1>
                 </div>
-                <nav class="main-nav">
-                    <a href="#overview" class="nav-item active" data-section="overview">Обзор</a>
-                    <a href="#send-test" class="nav-item" data-section="send-test">Отправить тест</a>
-                    <a href="#results" class="nav-item" data-section="results">Результаты тестов</a>
-                    <a href="#tariffs" class="nav-item" data-section="tariffs">Тарифы и оплата</a>
-                    <a href="#referral" class="nav-item" data-section="referral">Реферальная программа</a>
-                    <a href="#learning" class="nav-item" data-section="learning">Обучение</a>
-                </nav>
-                <div class="user-menu">
-                    <span class="user-name">Иван Петров</span>
-                    <button class="logout-btn" onclick="logout()">Выйти</button>
-                </div>
             </div>
-        </header>
+            
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item active" data-section="overview">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Обзор</span>
+                </a>
+                <a href="#send-test" class="nav-item" data-section="send-test">
+                    <span class="nav-icon">📤</span>
+                    <span class="nav-text">Отправить тест</span>
+                </a>
+                <a href="#results" class="nav-item" data-section="results">
+                    <span class="nav-icon">📋</span>
+                    <span class="nav-text">Результаты тестов</span>
+                </a>
+                <a href="#tariffs" class="nav-item" data-section="tariffs">
+                    <span class="nav-icon">💳</span>
+                    <span class="nav-text">Тарифы и оплата</span>
+                </a>
+                <a href="#referral" class="nav-item" data-section="referral">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">Реферальная программа</span>
+                </a>
+                <a href="#learning" class="nav-item" data-section="learning">
+                    <span class="nav-icon">📚</span>
+                    <span class="nav-text">Обучение</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <span class="user-name">Иван Петров</span>
+                </div>
+                <button class="logout-btn" onclick="logout()">Выйти</button>
+            </div>
+        </aside>
 
         <main class="main-content">
-            <section id="overview" class="section active">
-                <h2>Обзор</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <h3>МОИ ТЕСТЫ</h3>
-                        <div class="stat-numbers">
-                            <span class="available">15</span>
-                            <span class="separator">/</span>
-                            <span class="used">5</span>
-                        </div>
-                        <p>доступно / использовано</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>МОИ КАНДИДАТЫ</h3>
-                        <div class="stat-numbers">
-                            <span class="total">12</span>
-                        </div>
-                        <p>всего кандидатов</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>МОЯ КОМАНДА</h3>
-                        <div class="stat-numbers">
-                            <span class="total">8</span>
-                        </div>
-                        <p>сотрудников</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>ИЗБРАННЫЕ КАНДИДАТЫ ⭐</h3>
-                        <div class="stat-numbers">
-                            <span class="total">3</span>
-                        </div>
-                        <p>в избранном</p>
-                    </div>
-                </div>
+            <header class="content-header">
+                <h2 id="page-title">Обзор</h2>
+            </header>
 
-                <div class="activity-feed">
-                    <h3>Лента последних событий</h3>
-                    <div class="activity-list">
-                        <div class="activity-item">
-                            <span class="activity-time">2 часа назад</span>
-                            <span class="activity-text">Петров А.С. завершил тест "Менеджер по продажам"</span>
+            <div class="content-wrapper">
+                <section id="overview" class="section active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>МОИ ТЕСТЫ</h3>
+                            <div class="stat-numbers">
+                                <span class="available">15</span>
+                                <span class="separator">/</span>
+                                <span class="used">5</span>
+                            </div>
+                            <p>доступно / использовано</p>
                         </div>
-                        <div class="activity-item">
-                            <span class="activity-time">4 часа назад</span>
-                            <span class="activity-text">Сидорова Е.В. начала тест "Бухгалтер"</span>
+                        <div class="stat-card">
+                            <h3>МОИ КАНДИДАТЫ</h3>
+                            <div class="stat-numbers">
+                                <span class="total">12</span>
+                            </div>
+                            <p>всего кандидатов</p>
                         </div>
-                        <div class="activity-item">
-                            <span class="activity-time">1 день назад</span>
-                            <span class="activity-text">Добавлен новый кандидат: Козлов И.М.</span>
+                        <div class="stat-card">
+                            <h3>МОЯ КОМАНДА</h3>
+                            <div class="stat-numbers">
+                                <span class="total">8</span>
+                            </div>
+                            <p>сотрудников</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>ИЗБРАННЫЕ КАНДИДАТЫ ⭐</h3>
+                            <div class="stat-numbers">
+                                <span class="total">3</span>
+                            </div>
+                            <p>в избранном</p>
                         </div>
                     </div>
-                </div>
-            </section>
 
-            <section id="send-test" class="section">
-                <h2>Отправить тест</h2>
-                <form id="sendTestForm" class="send-test-form">
-                    <div class="form-group">
-                        <label for="profession">Профессия *</label>
-                        <select id="profession" name="profession" required>
-                            <option value="">Выберите профессию</option>
+                    <div class="activity-feed">
+                        <h3>Лента последних событий</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <span class="activity-time">2 часа назад</span>
+                                <span class="activity-text">Петров А.С. завершил тест "Менеджер по продажам"</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-time">4 часа назад</span>
+                                <span class="activity-text">Сидорова Е.В. начала тест "Бухгалтер"</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-time">1 день назад</span>
+                                <span class="activity-text">Добавлен новый кандидат: Козлов И.М.</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="send-test" class="section">
+                    <form id="sendTestForm" class="send-test-form">
+                        <div class="form-group">
+                            <label for="profession">Профессия *</label>
+                            <select id="profession" name="profession" required>
+                                <option value="">Выберите профессию</option>
+                                <option value="manager">Менеджер по продажам</option>
+                                <option value="accountant">Бухгалтер</option>
+                                <option value="developer">Программист</option>
+                                <option value="designer">Дизайнер</option>
+                                <option value="hr">HR-менеджер</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Способ отправки *</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="sendMethod" value="link" checked>
+                                    <span class="radio-custom"></span>
+                                    Сгенерировать ссылку
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="sendMethod" value="email">
+                                    <span class="radio-custom"></span>
+                                    Отправить приглашение на email
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="emailGroup" style="display: none;">
+                            <label for="candidateEmail">Email кандидата</label>
+                            <input type="email" id="candidateEmail" name="candidateEmail">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comment">Комментарий</label>
+                            <textarea id="comment" name="comment" maxlength="500" placeholder="До 500 символов"></textarea>
+                            <span class="char-count">0/500</span>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Отправить тест</button>
+                    </form>
+
+                    <div id="generatedLink" class="generated-link" style="display: none;">
+                        <h3>Ссылка сгенерирована</h3>
+                        <div class="link-container">
+                            <input type="text" id="testLink" readonly>
+                            <button class="btn-secondary" onclick="copyLink()">Скопировать</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="results" class="section">
+                    <div class="filters">
+                        <select id="statusFilter">
+                            <option value="">Все статусы</option>
+                            <option value="invited">Приглашён</option>
+                            <option value="in-progress">В процессе</option>
+                            <option value="completed">Завершён</option>
+                        </select>
+                        <select id="professionFilter">
+                            <option value="">Все профессии</option>
                             <option value="manager">Менеджер по продажам</option>
                             <option value="accountant">Бухгалтер</option>
                             <option value="developer">Программист</option>
                             <option value="designer">Дизайнер</option>
                             <option value="hr">HR-менеджер</option>
                         </select>
+                        <input type="date" id="dateFilter">
+                        <input type="text" id="searchFilter" placeholder="Поиск по ФИО">
                     </div>
 
-                    <div class="form-group">
-                        <label>Способ отправки *</label>
-                        <div class="radio-group">
-                            <label class="radio-label">
-                                <input type="radio" name="sendMethod" value="link" checked>
-                                <span class="radio-custom"></span>
-                                Сгенерировать ссылку
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="sendMethod" value="email">
-                                <span class="radio-custom"></span>
-                                Отправить приглашение на email
-                            </label>
+                    <div class="results-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ФИО</th>
+                                    <th>Статус</th>
+                                    <th>Профессия</th>
+                                    <th>Дата теста</th>
+                                    <th>Результат</th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Петров А.С.</td>
+                                    <td><span class="status completed">Завершён</span></td>
+                                    <td>Менеджер по продажам</td>
+                                    <td>15.12.2024</td>
+                                    <td>85%</td>
+                                    <td>
+                                        <button class="btn-small" onclick="viewReport('1')">Отчёт</button>
+                                        <button class="btn-small" onclick="downloadPDF('1')">PDF</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Сидорова Е.В.</td>
+                                    <td><span class="status in-progress">В процессе</span></td>
+                                    <td>Бухгалтер</td>
+                                    <td>14.12.2024</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Козлов И.М.</td>
+                                    <td><span class="status invited">Приглашён</span></td>
+                                    <td>Программист</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="tariffs" class="section">
+                    <div class="tariff-info">
+                        <div class="current-tariff">
+                            <h3>Текущий тариф: Базовый</h3>
+                            <p>Баланс тестов: <strong>15</strong></p>
+                        </div>
+                        <button class="btn-primary" onclick="showPackages()">Пополнить</button>
+                    </div>
+
+                    <div class="packages-grid" id="packagesGrid" style="display: none;">
+                        <div class="package-card">
+                            <h3>Базовый</h3>
+                            <div class="package-price">500 ₽</div>
+                            <div class="package-tests">10 тестов</div>
+                            <button class="btn-secondary" onclick="buyPackage('basic')">Купить</button>
+                        </div>
+                        <div class="package-card">
+                            <h3>Стандарт</h3>
+                            <div class="package-price">1200 ₽</div>
+                            <div class="package-tests">30 тестов</div>
+                            <button class="btn-secondary" onclick="buyPackage('standard')">Купить</button>
+                        </div>
+                        <div class="package-card">
+                            <h3>Премиум</h3>
+                            <div class="package-price">2000 ₽</div>
+                            <div class="package-tests">60 тестов</div>
+                            <button class="btn-secondary" onclick="buyPackage('premium')">Купить</button>
                         </div>
                     </div>
 
-                    <div class="form-group" id="emailGroup" style="display: none;">
-                        <label for="candidateEmail">Email кандидата</label>
-                        <input type="email" id="candidateEmail" name="candidateEmail">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="comment">Комментарий</label>
-                        <textarea id="comment" name="comment" maxlength="500" placeholder="До 500 символов"></textarea>
-                        <span class="char-count">0/500</span>
-                    </div>
-
-                    <button type="submit" class="btn-primary">Отправить тест</button>
-                </form>
-
-                <div id="generatedLink" class="generated-link" style="display: none;">
-                    <h3>Ссылка сгенерирована</h3>
-                    <div class="link-container">
-                        <input type="text" id="testLink" readonly>
-                        <button class="btn-secondary" onclick="copyLink()">Скопировать</button>
-                    </div>
-                </div>
-            </section>
-
-            <section id="results" class="section">
-                <h2>Результаты тестов</h2>
-                <div class="filters">
-                    <select id="statusFilter">
-                        <option value="">Все статусы</option>
-                        <option value="invited">Приглашён</option>
-                        <option value="in-progress">В процессе</option>
-                        <option value="completed">Завершён</option>
-                    </select>
-                    <select id="professionFilter">
-                        <option value="">Все профессии</option>
-                        <option value="manager">Менеджер по продажам</option>
-                        <option value="accountant">Бухгалтер</option>
-                        <option value="developer">Программист</option>
-                        <option value="designer">Дизайнер</option>
-                        <option value="hr">HR-менеджер</option>
-                    </select>
-                    <input type="date" id="dateFilter">
-                    <input type="text" id="searchFilter" placeholder="Поиск по ФИО">
-                </div>
-
-                <div class="results-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ФИО</th>
-                                <th>Статус</th>
-                                <th>Профессия</th>
-                                <th>Дата теста</th>
-                                <th>Результат</th>
-                                <th>Действия</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Петров А.С.</td>
-                                <td><span class="status completed">Завершён</span></td>
-                                <td>Менеджер по продажам</td>
-                                <td>15.12.2024</td>
-                                <td>85%</td>
-                                <td>
-                                    <button class="btn-small" onclick="viewReport('1')">Отчёт</button>
-                                    <button class="btn-small" onclick="downloadPDF('1')">PDF</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Сидорова Е.В.</td>
-                                <td><span class="status in-progress">В процессе</span></td>
-                                <td>Бухгалтер</td>
-                                <td>14.12.2024</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Козлов И.М.</td>
-                                <td><span class="status invited">Приглашён</span></td>
-                                <td>Программист</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <section id="tariffs" class="section">
-                <h2>Тарифы и оплата</h2>
-                <div class="tariff-info">
-                    <div class="current-tariff">
-                        <h3>Текущий тариф: Базовый</h3>
-                        <p>Баланс тестов: <strong>15</strong></p>
-                    </div>
-                    <button class="btn-primary" onclick="showPackages()">Пополнить</button>
-                </div>
-
-                <div class="packages-grid" id="packagesGrid" style="display: none;">
-                    <div class="package-card">
-                        <h3>Базовый</h3>
-                        <div class="package-price">500 ₽</div>
-                        <div class="package-tests">10 тестов</div>
-                        <button class="btn-secondary" onclick="buyPackage('basic')">Купить</button>
-                    </div>
-                    <div class="package-card">
-                        <h3>Стандарт</h3>
-                        <div class="package-price">1200 ₽</div>
-                        <div class="package-tests">30 тестов</div>
-                        <button class="btn-secondary" onclick="buyPackage('standard')">Купить</button>
-                    </div>
-                    <div class="package-card">
-                        <h3>Премиум</h3>
-                        <div class="package-price">2000 ₽</div>
-                        <div class="package-tests">60 тестов</div>
-                        <button class="btn-secondary" onclick="buyPackage('premium')">Купить</button>
-                    </div>
-                </div>
-
-                <div class="transaction-history">
-                    <h3>История транзакций</h3>
-                    <div class="transaction-list">
-                        <div class="transaction-item">
-                            <span class="transaction-date">10.12.2024</span>
-                            <span class="transaction-desc">Покупка пакета "Стандарт"</span>
-                            <span class="transaction-amount">+30 тестов</span>
-                            <a href="#" class="receipt-link">Чек</a>
-                        </div>
-                        <div class="transaction-item">
-                            <span class="transaction-date">05.12.2024</span>
-                            <span class="transaction-desc">Реферальный бонус</span>
-                            <span class="transaction-amount">+15 тестов</span>
-                            <span class="receipt-link">-</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="referral" class="section">
-                <h2>Реферальная программа</h2>
-                <div class="referral-info">
-                    <div class="referral-link-section">
-                        <h3>Ваша реферальная ссылка</h3>
-                        <div class="link-container">
-                            <input type="text" value="https://dreamteam.com/ref/IVAN123" readonly>
-                            <button class="btn-secondary" onclick="copyReferralLink()">Копировать</button>
-                        </div>
-                        <p>Ваш реферальный код: <strong>IVAN123</strong></p>
-                    </div>
-
-                    <div class="share-buttons">
-                        <button class="share-btn telegram" onclick="share('telegram')">Telegram</button>
-                        <button class="share-btn whatsapp" onclick="share('whatsapp')">WhatsApp</button>
-                        <button class="share-btn email" onclick="share('email')">Email</button>
-                    </div>
-
-                    <div class="referral-progress">
-                        <h3>Прогресс</h3>
-                        <div class="progress-stats">
-                            <div class="progress-item">
-                                <span class="progress-label">Приглашено</span>
-                                <span class="progress-value">8</span>
+                    <div class="transaction-history">
+                        <h3>История транзакций</h3>
+                        <div class="transaction-list">
+                            <div class="transaction-item">
+                                <span class="transaction-date">10.12.2024</span>
+                                <span class="transaction-desc">Покупка пакета "Стандарт"</span>
+                                <span class="transaction-amount">+30 тестов</span>
+                                <a href="#" class="receipt-link">Чек</a>
                             </div>
-                            <div class="progress-item">
-                                <span class="progress-label">Завершено</span>
-                                <span class="progress-value">5</span>
-                            </div>
-                            <div class="progress-item">
-                                <span class="progress-label">Бонусов начислено</span>
-                                <span class="progress-value">15 тестов</span>
+                            <div class="transaction-item">
+                                <span class="transaction-date">05.12.2024</span>
+                                <span class="transaction-desc">Реферальный бонус</span>
+                                <span class="transaction-amount">+15 тестов</span>
+                                <span class="receipt-link">-</span>
                             </div>
                         </div>
                     </div>
+                </section>
 
-                    <div class="referral-conditions">
-                        <h3>Условия программы</h3>
-                        <ul>
-                            <li>Бонус 15 тестов за 5 завершённых тестов реферала</li>
-                            <li>Максимум 15 тестов с одного реферала</li>
-                            <li>Программа доступна только для работодателей и HR</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+                <section id="referral" class="section">
+                    <div class="referral-info">
+                        <div class="referral-link-section">
+                            <h3>Ваша реферальная ссылка</h3>
+                            <div class="link-container">
+                                <input type="text" value="https://dreamteam.com/ref/IVAN123" readonly>
+                                <button class="btn-secondary" onclick="copyReferralLink()">Копировать</button>
+                            </div>
+                            <p>Ваш реферальный код: <strong>IVAN123</strong></p>
+                        </div>
 
-            <section id="learning" class="section">
-                <h2>Обучение</h2>
-                <div class="learning-content">
-                    <div class="learning-item">
-                        <h3>Как интерпретировать тест</h3>
-                        <p>Подробный гайд по анализу результатов тестирования кандидатов</p>
-                        <button class="btn-secondary" onclick="openGuide()">Открыть гайд</button>
-                    </div>
+                        <div class="share-buttons">
+                            <button class="share-btn telegram" onclick="share('telegram')">Telegram</button>
+                            <button class="share-btn whatsapp" onclick="share('whatsapp')">WhatsApp</button>
+                            <button class="share-btn email" onclick="share('email')">Email</button>
+                        </div>
 
-                    <div class="learning-item">
-                        <h3>10 примеров интерпретации</h3>
-                        <p>Практические примеры анализа результатов для разных профессий</p>
-                        <button class="btn-secondary" onclick="openExamples()">Смотреть примеры</button>
-                    </div>
+                        <div class="referral-progress">
+                            <h3>Прогресс</h3>
+                            <div class="progress-stats">
+                                <div class="progress-item">
+                                    <span class="progress-label">Приглашено</span>
+                                    <span class="progress-value">8</span>
+                                </div>
+                                <div class="progress-item">
+                                    <span class="progress-label">Завершено</span>
+                                    <span class="progress-value">5</span>
+                                </div>
+                                <div class="progress-item">
+                                    <span class="progress-label">Бонусов начислено</span>
+                                    <span class="progress-value">15 тестов</span>
+                                </div>
+                            </div>
+                        </div>
 
-                    <div class="learning-item">
-                        <h3>Видео-инструкция</h3>
-                        <p>Пошаговое руководство по работе с системой</p>
-                        <button class="btn-secondary" onclick="openVideo()">Смотреть видео</button>
+                        <div class="referral-conditions">
+                            <h3>Условия программы</h3>
+                            <ul>
+                                <li>Бонус 15 тестов за 5 завершённых тестов реферала</li>
+                                <li>Максимум 15 тестов с одного реферала</li>
+                                <li>Программа доступна только для работодателей и HR</li>
+                            </ul>
+                        </div>
                     </div>
+                </section>
 
-                    <div class="learning-item">
-                        <h3>FAQ</h3>
-                        <p>Часто задаваемые вопросы и ответы</p>
-                        <button class="btn-secondary" onclick="openFAQ()">Открыть FAQ</button>
+                <section id="learning" class="section">
+                    <div class="learning-content">
+                        <div class="learning-item">
+                            <h3>Как интерпретировать тест</h3>
+                            <p>Подробный гайд по анализу результатов тестирования кандидатов</p>
+                            <button class="btn-secondary" onclick="openGuide()">Открыть гайд</button>
+                        </div>
+
+                        <div class="learning-item">
+                            <h3>10 примеров интерпретации</h3>
+                            <p>Практические примеры анализа результатов для разных профессий</p>
+                            <button class="btn-secondary" onclick="openExamples()">Смотреть примеры</button>
+                        </div>
+
+                        <div class="learning-item">
+                            <h3>Видео-инструкция</h3>
+                            <p>Пошаговое руководство по работе с системой</p>
+                            <button class="btn-secondary" onclick="openVideo()">Смотреть видео</button>
+                        </div>
+
+                        <div class="learning-item">
+                            <h3>FAQ</h3>
+                            <p>Часто задаваемые вопросы и ответы</p>
+                            <button class="btn-secondary" onclick="openFAQ()">Открыть FAQ</button>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </main>
     </div>
 

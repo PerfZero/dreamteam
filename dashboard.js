@@ -6,6 +6,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const charCount = document.querySelector('.char-count');
     const sendMethodRadios = document.querySelectorAll('input[name="sendMethod"]');
     const emailGroup = document.getElementById('emailGroup');
+    const pageTitle = document.getElementById('page-title');
+
+    const sectionTitles = {
+        'overview': 'Обзор',
+        'send-test': 'Отправить тест',
+        'results': 'Результаты тестов',
+        'tariffs': 'Тарифы и оплата',
+        'referral': 'Реферальная программа',
+        'learning': 'Обучение'
+    };
 
     navItems.forEach(item => {
         item.addEventListener('click', function(e) {
@@ -17,6 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             this.classList.add('active');
             document.getElementById(targetSection).classList.add('active');
+            
+            if (pageTitle && sectionTitles[targetSection]) {
+                pageTitle.textContent = sectionTitles[targetSection];
+            }
         });
     });
 

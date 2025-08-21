@@ -3,107 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DreamTeam - Регистрация и авторизация</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>DreamTeam - Все страницы</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            color: #015340;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .pages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .page-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .page-card:hover {
+            border-color: #015340;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(1, 83, 64, 0.1);
+        }
+        
+        .page-card h3 {
+            color: #015340;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .page-card p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .page-link {
+            display: inline-block;
+            background: #015340;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        
+        .page-link:hover {
+            background: #027a5a;
+        }
+        
+        .auth-info {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #015340;
+        }
+        
+        .auth-info h3 {
+            color: #015340;
+            margin-bottom: 10px;
+        }
+        
+        .auth-info p {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .auth-info strong {
+            color: #015340;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <div class="auth-container">
-            <div class="logo">
-                <h1>DreamTeam</h1>
+        <div class="header">
+            <h1>DreamTeam</h1>
+            <p>Все страницы проекта</p>
+        </div>
+        
+        <div class="auth-info">
+            <h3>🔐 Данные для входа</h3>
+            <p><strong>Email:</strong> admin@dreamteam.com</p>
+            <p><strong>Пароль:</strong> admin123</p>
+        </div>
+        
+        <div class="pages-grid">
+            <div class="page-card">
+                <h3>🔐 Авторизация</h3>
+                <p>Страница входа и регистрации пользователей</p>
+                <a href="auth.html" class="page-link">Открыть</a>
             </div>
             
-            <div class="tabs">
-                <button class="tab-btn active" data-tab="login">Войти</button>
-                <button class="tab-btn" data-tab="register">Регистрация</button>
+            <div class="page-card">
+                <h3>📊 Дашборд</h3>
+                <p>Личный кабинет работодателя с левым меню</p>
+                <a href="dashboard.html" class="page-link">Открыть</a>
             </div>
-
-            <div class="tab-content active" id="login">
-                <form id="loginForm" class="auth-form">
-                    <div class="form-group">
-                        <label for="loginEmail">Email или телефон</label>
-                        <input type="text" id="loginEmail" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="loginPassword">Пароль</label>
-                        <input type="password" id="loginPassword" name="password" required>
-                    </div>
-                    <button type="submit" class="btn-primary">Войти</button>
-                    <div class="form-links">
-                        <a href="#" class="forgot-password">Забыли пароль?</a>
-                    </div>
-                </form>
+            
+            <div class="page-card">
+                <h3>📝 Тест</h3>
+                <p>Страница прохождения тестирования</p>
+                <a href="test.html" class="page-link">Открыть</a>
             </div>
-
-            <div class="tab-content" id="register">
-                <form id="registerForm" class="auth-form">
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Телефон *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Пароль *</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="role">Роль *</label>
-                        <select id="role" name="role" required>
-                            <option value="">Выберите роль</option>
-                            <option value="employer">Работодатель</option>
-                            <option value="employee">Работник (Кандидат/Сотрудник)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Фамилия *</label>
-                        <input type="text" id="lastName" name="lastName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="firstName">Имя *</label>
-                        <input type="text" id="firstName" name="firstName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="middleName">Отчество *</label>
-                        <input type="text" id="middleName" name="middleName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="birthDate">Дата рождения *</label>
-                        <input type="date" id="birthDate" name="birthDate" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="city">Город *</label>
-                        <input type="text" id="city" name="city" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="gender">Пол *</label>
-                        <select id="gender" name="gender" required>
-                            <option value="">Выберите пол</option>
-                            <option value="male">Мужской</option>
-                            <option value="female">Женский</option>
-                        </select>
-                    </div>
-                    <div class="form-group" id="referralGroup" style="display: none;">
-                        <label for="referralCode">Реферальный код</label>
-                        <input type="text" id="referralCode" name="referralCode">
-                    </div>
-                    <div class="form-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="privacy" name="privacy" required>
-                            <span class="checkmark"></span>
-                            Согласен с <a href="#" target="_blank">политикой конфиденциальности и офертой</a>
-                        </label>
-                    </div>
-                    <button type="submit" class="btn-primary">Зарегистрироваться</button>
-                </form>
+            
+            <div class="page-card">
+                <h3>✅ Завершение теста</h3>
+                <p>Страница с результатами после завершения теста</p>
+                <a href="test-complete.html" class="page-link">Открыть</a>
+            </div>
+            
+            <div class="page-card">
+                <h3>📋 Отчёт</h3>
+                <p>Детальный отчёт по результатам кандидата</p>
+                <a href="report.html" class="page-link">Открыть</a>
+            </div>
+            
+            <div class="page-card">
+                <h3>💳 Оплата</h3>
+                <p>Страница выбора тарифа и оплаты</p>
+                <a href="payment.html" class="page-link">Открыть</a>
             </div>
         </div>
     </div>
-
-    <div id="notification" class="notification"></div>
-    
-    <script src="script.js"></script>
 </body>
 </html>
