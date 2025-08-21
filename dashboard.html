@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DreamTeam - Личный кабинет</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
@@ -11,54 +15,59 @@
         <aside class="sidebar">
             <div class="sidebar-header">
                 <div class="logo">
-                    <h1>DreamTeam</h1>
+                    <h1><i class="fas fa-users"></i> DreamTeam</h1>
                 </div>
             </div>
             
             <nav class="sidebar-nav">
                 <a href="#overview" class="nav-item active" data-section="overview">
-                    <span class="nav-icon">📊</span>
+                    <i class="fas fa-chart-line"></i>
                     <span class="nav-text">Обзор</span>
                 </a>
                 <a href="#send-test" class="nav-item" data-section="send-test">
-                    <span class="nav-icon">📤</span>
+                    <i class="fas fa-paper-plane"></i>
                     <span class="nav-text">Отправить тест</span>
                 </a>
                 <a href="#results" class="nav-item" data-section="results">
-                    <span class="nav-icon">📋</span>
+                    <i class="fas fa-clipboard-list"></i>
                     <span class="nav-text">Результаты тестов</span>
                 </a>
                 <a href="#tariffs" class="nav-item" data-section="tariffs">
-                    <span class="nav-icon">💳</span>
+                    <i class="fas fa-credit-card"></i>
                     <span class="nav-text">Тарифы и оплата</span>
                 </a>
                 <a href="#referral" class="nav-item" data-section="referral">
-                    <span class="nav-icon">👥</span>
+                    <i class="fas fa-users"></i>
                     <span class="nav-text">Реферальная программа</span>
                 </a>
                 <a href="#learning" class="nav-item" data-section="learning">
-                    <span class="nav-icon">📚</span>
+                    <i class="fas fa-graduation-cap"></i>
                     <span class="nav-text">Обучение</span>
                 </a>
             </nav>
             
             <div class="sidebar-footer">
                 <div class="user-info">
-                    <span class="user-name">Иван Петров</span>
+                    <span class="user-name"><i class="fas fa-user"></i> Иван Петров</span>
                 </div>
-                <button class="logout-btn" onclick="logout()">Выйти</button>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Выйти
+                </button>
             </div>
         </aside>
 
         <main class="main-content">
             <header class="content-header">
-                <h2 id="page-title">Обзор</h2>
+                <h2 id="page-title"><i class="fas fa-chart-line"></i> Обзор</h2>
             </header>
 
             <div class="content-wrapper">
                 <section id="overview" class="section active">
                     <div class="stats-grid">
                         <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
                             <h3>МОИ ТЕСТЫ</h3>
                             <div class="stat-numbers">
                                 <span class="available">15</span>
@@ -68,6 +77,9 @@
                             <p>доступно / использовано</p>
                         </div>
                         <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
                             <h3>МОИ КАНДИДАТЫ</h3>
                             <div class="stat-numbers">
                                 <span class="total">12</span>
@@ -75,6 +87,9 @@
                             <p>всего кандидатов</p>
                         </div>
                         <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
                             <h3>МОЯ КОМАНДА</h3>
                             <div class="stat-numbers">
                                 <span class="total">8</span>
@@ -82,7 +97,10 @@
                             <p>сотрудников</p>
                         </div>
                         <div class="stat-card">
-                            <h3>ИЗБРАННЫЕ КАНДИДАТЫ ⭐</h3>
+                            <div class="stat-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>ИЗБРАННЫЕ КАНДИДАТЫ</h3>
                             <div class="stat-numbers">
                                 <span class="total">3</span>
                             </div>
@@ -91,7 +109,7 @@
                     </div>
 
                     <div class="activity-feed">
-                        <h3>Лента последних событий</h3>
+                        <h3><i class="fas fa-history"></i> Лента последних событий</h3>
                         <div class="activity-list">
                             <div class="activity-item">
                                 <span class="activity-time">2 часа назад</span>
@@ -112,7 +130,7 @@
                 <section id="send-test" class="section">
                     <form id="sendTestForm" class="send-test-form">
                         <div class="form-group">
-                            <label for="profession">Профессия *</label>
+                            <label for="profession"><i class="fas fa-briefcase"></i> Профессия *</label>
                             <select id="profession" name="profession" required>
                                 <option value="">Выберите профессию</option>
                                 <option value="manager">Менеджер по продажам</option>
@@ -124,40 +142,44 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Способ отправки *</label>
+                            <label><i class="fas fa-share"></i> Способ отправки *</label>
                             <div class="radio-group">
                                 <label class="radio-label">
                                     <input type="radio" name="sendMethod" value="link" checked>
                                     <span class="radio-custom"></span>
-                                    Сгенерировать ссылку
+                                    <i class="fas fa-link"></i> Сгенерировать ссылку
                                 </label>
                                 <label class="radio-label">
                                     <input type="radio" name="sendMethod" value="email">
                                     <span class="radio-custom"></span>
-                                    Отправить приглашение на email
+                                    <i class="fas fa-envelope"></i> Отправить приглашение на email
                                 </label>
                             </div>
                         </div>
 
                         <div class="form-group" id="emailGroup" style="display: none;">
-                            <label for="candidateEmail">Email кандидата</label>
+                            <label for="candidateEmail"><i class="fas fa-envelope"></i> Email кандидата</label>
                             <input type="email" id="candidateEmail" name="candidateEmail">
                         </div>
 
                         <div class="form-group">
-                            <label for="comment">Комментарий</label>
+                            <label for="comment"><i class="fas fa-comment"></i> Комментарий</label>
                             <textarea id="comment" name="comment" maxlength="500" placeholder="До 500 символов"></textarea>
                             <span class="char-count">0/500</span>
                         </div>
 
-                        <button type="submit" class="btn-primary">Отправить тест</button>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Отправить тест
+                        </button>
                     </form>
 
                     <div id="generatedLink" class="generated-link" style="display: none;">
-                        <h3>Ссылка сгенерирована</h3>
+                        <h3><i class="fas fa-check-circle"></i> Ссылка сгенерирована</h3>
                         <div class="link-container">
                             <input type="text" id="testLink" readonly>
-                            <button class="btn-secondary" onclick="copyLink()">Скопировать</button>
+                            <button class="btn-secondary" onclick="copyLink()">
+                                <i class="fas fa-copy"></i> Скопировать
+                            </button>
                         </div>
                     </div>
                 </section>
@@ -186,12 +208,12 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>ФИО</th>
-                                    <th>Статус</th>
-                                    <th>Профессия</th>
-                                    <th>Дата теста</th>
-                                    <th>Результат</th>
-                                    <th>Действия</th>
+                                    <th><i class="fas fa-user"></i> ФИО</th>
+                                    <th><i class="fas fa-info-circle"></i> Статус</th>
+                                    <th><i class="fas fa-briefcase"></i> Профессия</th>
+                                    <th><i class="fas fa-calendar"></i> Дата теста</th>
+                                    <th><i class="fas fa-percentage"></i> Результат</th>
+                                    <th><i class="fas fa-cogs"></i> Действия</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -202,8 +224,12 @@
                                     <td>15.12.2024</td>
                                     <td>85%</td>
                                     <td>
-                                        <button class="btn-small" onclick="viewReport('1')">Отчёт</button>
-                                        <button class="btn-small" onclick="downloadPDF('1')">PDF</button>
+                                        <button class="btn-small" onclick="viewReport('1')">
+                                            <i class="fas fa-file-alt"></i> Отчёт
+                                        </button>
+                                        <button class="btn-small" onclick="downloadPDF('1')">
+                                            <i class="fas fa-download"></i> PDF
+                                        </button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -230,41 +256,60 @@
                 <section id="tariffs" class="section">
                     <div class="tariff-info">
                         <div class="current-tariff">
-                            <h3>Текущий тариф: Базовый</h3>
+                            <h3><i class="fas fa-crown"></i> Текущий тариф: Базовый</h3>
                             <p>Баланс тестов: <strong>15</strong></p>
                         </div>
-                        <button class="btn-primary" onclick="showPackages()">Пополнить</button>
+                        <button class="btn-primary" onclick="showPackages()">
+                            <i class="fas fa-plus"></i> Пополнить
+                        </button>
                     </div>
 
                     <div class="packages-grid" id="packagesGrid" style="display: none;">
                         <div class="package-card">
+                            <div class="package-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
                             <h3>Базовый</h3>
                             <div class="package-price">500 ₽</div>
                             <div class="package-tests">10 тестов</div>
-                            <button class="btn-secondary" onclick="buyPackage('basic')">Купить</button>
+                            <button class="btn-secondary" onclick="buyPackage('basic')">
+                                <i class="fas fa-shopping-cart"></i> Купить
+                            </button>
                         </div>
                         <div class="package-card">
+                            <div class="package-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
                             <h3>Стандарт</h3>
                             <div class="package-price">1200 ₽</div>
                             <div class="package-tests">30 тестов</div>
-                            <button class="btn-secondary" onclick="buyPackage('standard')">Купить</button>
+                            <button class="btn-secondary" onclick="buyPackage('standard')">
+                                <i class="fas fa-shopping-cart"></i> Купить
+                            </button>
                         </div>
                         <div class="package-card">
+                            <div class="package-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
                             <h3>Премиум</h3>
                             <div class="package-price">2000 ₽</div>
                             <div class="package-tests">60 тестов</div>
-                            <button class="btn-secondary" onclick="buyPackage('premium')">Купить</button>
+                            <button class="btn-secondary" onclick="buyPackage('premium')">
+                                <i class="fas fa-shopping-cart"></i> Купить
+                            </button>
                         </div>
                     </div>
 
                     <div class="transaction-history">
-                        <h3>История транзакций</h3>
+                        <h3><i class="fas fa-history"></i> История транзакций</h3>
                         <div class="transaction-list">
                             <div class="transaction-item">
                                 <span class="transaction-date">10.12.2024</span>
                                 <span class="transaction-desc">Покупка пакета "Стандарт"</span>
                                 <span class="transaction-amount">+30 тестов</span>
-                                <a href="#" class="receipt-link">Чек</a>
+                                <a href="#" class="receipt-link">
+                                    <i class="fas fa-receipt"></i> Чек
+                                </a>
                             </div>
                             <div class="transaction-item">
                                 <span class="transaction-date">05.12.2024</span>
@@ -279,22 +324,30 @@
                 <section id="referral" class="section">
                     <div class="referral-info">
                         <div class="referral-link-section">
-                            <h3>Ваша реферальная ссылка</h3>
+                            <h3><i class="fas fa-link"></i> Ваша реферальная ссылка</h3>
                             <div class="link-container">
                                 <input type="text" value="https://dreamteam.com/ref/IVAN123" readonly>
-                                <button class="btn-secondary" onclick="copyReferralLink()">Копировать</button>
+                                <button class="btn-secondary" onclick="copyReferralLink()">
+                                    <i class="fas fa-copy"></i> Копировать
+                                </button>
                             </div>
                             <p>Ваш реферальный код: <strong>IVAN123</strong></p>
                         </div>
 
                         <div class="share-buttons">
-                            <button class="share-btn telegram" onclick="share('telegram')">Telegram</button>
-                            <button class="share-btn whatsapp" onclick="share('whatsapp')">WhatsApp</button>
-                            <button class="share-btn email" onclick="share('email')">Email</button>
+                            <button class="share-btn telegram" onclick="share('telegram')">
+                                <i class="fab fa-telegram"></i> Telegram
+                            </button>
+                            <button class="share-btn whatsapp" onclick="share('whatsapp')">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </button>
+                            <button class="share-btn email" onclick="share('email')">
+                                <i class="fas fa-envelope"></i> Email
+                            </button>
                         </div>
 
                         <div class="referral-progress">
-                            <h3>Прогресс</h3>
+                            <h3><i class="fas fa-chart-bar"></i> Прогресс</h3>
                             <div class="progress-stats">
                                 <div class="progress-item">
                                     <span class="progress-label">Приглашено</span>
@@ -312,7 +365,7 @@
                         </div>
 
                         <div class="referral-conditions">
-                            <h3>Условия программы</h3>
+                            <h3><i class="fas fa-info-circle"></i> Условия программы</h3>
                             <ul>
                                 <li>Бонус 15 тестов за 5 завершённых тестов реферала</li>
                                 <li>Максимум 15 тестов с одного реферала</li>
@@ -325,27 +378,47 @@
                 <section id="learning" class="section">
                     <div class="learning-content">
                         <div class="learning-item">
+                            <div class="learning-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
                             <h3>Как интерпретировать тест</h3>
                             <p>Подробный гайд по анализу результатов тестирования кандидатов</p>
-                            <button class="btn-secondary" onclick="openGuide()">Открыть гайд</button>
+                            <button class="btn-secondary" onclick="openGuide()">
+                                <i class="fas fa-external-link-alt"></i> Открыть гайд
+                            </button>
                         </div>
 
                         <div class="learning-item">
+                            <div class="learning-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
                             <h3>10 примеров интерпретации</h3>
                             <p>Практические примеры анализа результатов для разных профессий</p>
-                            <button class="btn-secondary" onclick="openExamples()">Смотреть примеры</button>
+                            <button class="btn-secondary" onclick="openExamples()">
+                                <i class="fas fa-external-link-alt"></i> Смотреть примеры
+                            </button>
                         </div>
 
                         <div class="learning-item">
+                            <div class="learning-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
                             <h3>Видео-инструкция</h3>
                             <p>Пошаговое руководство по работе с системой</p>
-                            <button class="btn-secondary" onclick="openVideo()">Смотреть видео</button>
+                            <button class="btn-secondary" onclick="openVideo()">
+                                <i class="fas fa-external-link-alt"></i> Смотреть видео
+                            </button>
                         </div>
 
                         <div class="learning-item">
+                            <div class="learning-icon">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
                             <h3>FAQ</h3>
                             <p>Часто задаваемые вопросы и ответы</p>
-                            <button class="btn-secondary" onclick="openFAQ()">Открыть FAQ</button>
+                            <button class="btn-secondary" onclick="openFAQ()">
+                                <i class="fas fa-external-link-alt"></i> Открыть FAQ
+                            </button>
                         </div>
                     </div>
                 </section>

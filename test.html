@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DreamTeam - Тестирование</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="test.css">
 </head>
 <body>
@@ -11,18 +15,25 @@
         <header class="test-header">
             <div class="header-content">
                 <div class="logo">
-                    <h1>DreamTeam</h1>
+                    <h1><i class="fas fa-users"></i> DreamTeam</h1>
                 </div>
                 <div class="test-info">
-                    <div class="timer">
-                        <span class="timer-label">Время:</span>
-                        <span id="timer" class="timer-display">60:00</span>
+                    <div class="test-title">
+                        <h2><i class="fas fa-clipboard-list"></i> Тест: Менеджер по продажам</h2>
                     </div>
-                    <div class="progress">
-                        <span class="progress-label">Вопрос:</span>
-                        <span id="currentQuestion">1</span>
-                        <span class="progress-separator">из</span>
-                        <span id="totalQuestions">20</span>
+                    <div class="test-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span id="timer">60:00</span>
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-question-circle"></i>
+                            <span id="questionCounter">1 из 20</span>
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-user"></i>
+                            <span>Петров А.С.</span>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -31,41 +42,96 @@
         <main class="test-content">
             <div class="question-container">
                 <div class="question-header">
-                    <h2 id="questionText">Загрузка вопроса...</h2>
+                    <h3 id="questionTitle">Вопрос 1</h3>
+                    <div class="question-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <span class="progress-text" id="progressText">5%</span>
+                    </div>
                 </div>
 
-                <div class="answers-container" id="answersContainer">
-                    <div class="loading">Загрузка вариантов ответов...</div>
+                <div class="question-content">
+                    <p id="questionText">Какой из следующих подходов наиболее эффективен для установления контакта с потенциальным клиентом?</p>
+                    
+                    <div class="options-container" id="optionsContainer">
+                        <label class="option-item">
+                            <input type="radio" name="answer" value="a">
+                            <span class="option-marker"></span>
+                            <span class="option-text">Немедленно начать презентацию продукта</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="answer" value="b">
+                            <span class="option-marker"></span>
+                            <span class="option-text">Задать открытые вопросы о потребностях клиента</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="answer" value="c">
+                            <span class="option-marker"></span>
+                            <span class="option-text">Предложить скидку на первый заказ</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="answer" value="d">
+                            <span class="option-marker"></span>
+                            <span class="option-text">Отправить каталог продукции</span>
+                        </label>
+                    </div>
                 </div>
 
                 <div class="question-navigation">
-                    <button id="prevBtn" class="nav-btn" onclick="previousQuestion()">Назад</button>
-                    <button id="nextBtn" class="nav-btn" onclick="nextQuestion()">Далее</button>
-                    <button id="submitBtn" class="submit-btn" onclick="submitTest()" style="display: none;">Сдать тест</button>
+                    <button class="nav-btn" id="prevBtn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                        Предыдущий
+                    </button>
+                    <button class="nav-btn primary" id="nextBtn">
+                        Следующий
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
 
-            <div class="question-indicators">
-                <div class="indicators-grid" id="indicatorsGrid">
+            <aside class="test-sidebar">
+                <div class="sidebar-section">
+                    <h4><i class="fas fa-list"></i> Навигация по вопросам</h4>
+                    <div class="question-grid" id="questionGrid">
+                        <!-- Вопросы будут добавлены динамически -->
+                    </div>
                 </div>
-            </div>
+
+                <div class="sidebar-section">
+                    <h4><i class="fas fa-info-circle"></i> Инструкции</h4>
+                    <ul class="instructions-list">
+                        <li><i class="fas fa-check"></i> Время ограничено 60 минутами</li>
+                        <li><i class="fas fa-check"></i> Нельзя пропускать вопросы</li>
+                        <li><i class="fas fa-check"></i> Не закрывайте вкладку браузера</li>
+                        <li><i class="fas fa-check"></i> Тест завершится автоматически</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Важно</h4>
+                    <div class="warning-box">
+                        <p><i class="fas fa-shield-alt"></i> Система отслеживает переключения между вкладками. Множественные переключения могут привести к автоматическому завершению теста.</p>
+                    </div>
+                </div>
+            </aside>
         </main>
 
-        <div id="warningModal" class="modal" style="display: none;">
+        <div id="warningModal" class="warning-modal">
             <div class="modal-content">
-                <h3>⚠️ Внимание!</h3>
-                <p>Обнаружено переключение окна/вкладки. При повторном переключении тест будет автоматически сдан.</p>
-                <button class="btn-primary" onclick="closeWarning()">Понятно</button>
-            </div>
-        </div>
-
-        <div id="submitModal" class="modal" style="display: none;">
-            <div class="modal-content">
-                <h3>Подтверждение сдачи теста</h3>
-                <p>Вы уверены, что хотите сдать тест? После сдачи изменить ответы будет невозможно.</p>
-                <div class="modal-buttons">
-                    <button class="btn-secondary" onclick="closeSubmitModal()">Отмена</button>
-                    <button class="btn-primary" onclick="confirmSubmit()">Сдать тест</button>
+                <div class="modal-header">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Предупреждение</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Обнаружено переключение между вкладками. Это может привести к автоматическому завершению теста.</p>
+                    <p><strong>Переключений: <span id="switchCount">1</span></strong></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="closeWarning()">
+                        <i class="fas fa-times"></i>
+                        Понятно
+                    </button>
                 </div>
             </div>
         </div>

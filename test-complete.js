@@ -6,7 +6,7 @@ function loadTestResults() {
     const results = JSON.parse(localStorage.getItem('testResults'));
     
     if (!results) {
-        window.location.href = 'index.html';
+        showDemoResults();
         return;
     }
     
@@ -20,6 +20,22 @@ function loadTestResults() {
     document.getElementById('timeSpent').textContent = timeString;
     
     localStorage.removeItem('testResults');
+}
+
+function showDemoResults() {
+    document.getElementById('answeredQuestions').textContent = '18';
+    document.getElementById('totalQuestions').textContent = '20';
+    document.getElementById('completionRate').textContent = '90%';
+    document.getElementById('timeSpent').textContent = '45:30';
+    
+    const completionMessage = document.querySelector('.completion-message');
+    if (completionMessage) {
+        completionMessage.innerHTML = `
+            <p><strong>Демо-режим:</strong> Это пример страницы завершения теста.</p>
+            <p>Ваши результаты будут обработаны и отправлены работодателю. Обычно это занимает несколько минут.</p>
+            <p>Вы можете закрыть эту страницу.</p>
+        `;
+    }
 }
 
 function closeWindow() {

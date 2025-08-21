@@ -473,7 +473,5 @@ function processTestResults() {
     
     localStorage.setItem('testResults', JSON.stringify(results));
     
-    alert(`Тест завершен!\n\nОтвечено вопросов: ${answeredQuestions} из ${totalQuestions}\nПроцент завершения: ${completionRate}%\nВремя выполнения: ${Math.floor(results.timeSpent / 60)}:${(results.timeSpent % 60).toString().padStart(2, '0')}`);
-    
     window.location.href = 'test-complete.html';
 }
