@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamTeam - Отчёт о кандидате</title>
+    <link rel="stylesheet" href="report.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>DreamTeam</h1>
+                </div>
+                <nav class="breadcrumb">
+                    <a href="dashboard.html">Личный кабинет</a>
+                    <span class="separator">/</span>
+                    <a href="dashboard.html#results">Результаты тестов</a>
+                    <span class="separator">/</span>
+                    <span class="current">Отчёт о кандидате</span>
+                </nav>
+                <div class="user-menu">
+                    <span class="user-name">Иван Петров</span>
+                    <button class="logout-btn" onclick="logout()">Выйти</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="report-header">
+                <div class="candidate-info">
+                    <h1>Отчёт о кандидате</h1>
+                    <div class="candidate-details">
+                        <h2>Петров Александр Сергеевич</h2>
+                        <p class="position">Менеджер по продажам</p>
+                        <p class="test-date">Дата прохождения теста: 15.12.2024</p>
+                        <div class="overall-score">
+                            <span class="score-label">Общая оценка:</span>
+                            <span class="score-value">85%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-actions">
+                    <button class="btn-secondary" onclick="downloadPDF()">
+                        📄 Скачать PDF
+                    </button>
+                    <button class="btn-primary" onclick="addToFavorites()">
+                        ⭐ Добавить в избранное
+                    </button>
+                </div>
+            </div>
+
+            <div class="report-content">
+                <div class="charts-section">
+                    <div class="chart-container">
+                        <h3>Радарная диаграмма</h3>
+                        <div class="radar-chart" id="radarChart">
+                            <canvas id="radarCanvas"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Столбчатая диаграмма</h3>
+                        <div class="bar-chart" id="barChart">
+                            <canvas id="barCanvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <div class="strengths">
+                        <h3>💪 Сильные стороны</h3>
+                        <ul>
+                            <li>Высокий уровень ответственности и надежности</li>
+                            <li>Отличные навыки планирования и организации</li>
+                            <li>Способность работать в команде</li>
+                            <li>Адаптивность к изменениям</li>
+                            <li>Ориентация на результат</li>
+                        </ul>
+                    </div>
+
+                    <div class="risks">
+                        <h3>⚠️ Риски</h3>
+                        <ul>
+                            <li>Склонность к перфекционизму может замедлять работу</li>
+                            <li>Необходимость дополнительного обучения в области продаж</li>
+                            <li>Возможные сложности с быстрым принятием решений</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="conclusion-section">
+                    <h3>📋 Заключение</h3>
+                    <div class="conclusion-text">
+                        <p>Александр Петров демонстрирует высокий потенциал для работы в сфере продаж. Его сильные стороны включают отличные организационные навыки, ответственность и способность работать в команде.</p>
+                        
+                        <p>Кандидат показывает хорошую адаптивность к изменениям и ориентацию на результат, что является важными качествами для менеджера по продажам. Однако рекомендуется обратить внимание на развитие навыков быстрого принятия решений и снижение перфекционизма.</p>
+                        
+                        <p><strong>Рекомендация:</strong> Кандидат подходит для позиции менеджера по продажам с возможностью дальнейшего развития в области лидерства.</p>
+                    </div>
+                </div>
+
+                <div class="status-section">
+                    <h3>Статус сотрудника</h3>
+                    <div class="status-options">
+                        <label class="status-option">
+                            <input type="checkbox" name="status" value="team">
+                            <span class="checkmark"></span>
+                            В команде
+                        </label>
+                        <label class="status-option">
+                            <input type="checkbox" name="status" value="probation">
+                            <span class="checkmark"></span>
+                            На испытательном сроке
+                        </label>
+                        <label class="status-option">
+                            <input type="checkbox" name="status" value="reserve">
+                            <span class="checkmark"></span>
+                            В резерве
+                        </label>
+                        <label class="status-option">
+                            <input type="checkbox" name="status" value="fired">
+                            <span class="checkmark"></span>
+                            Уволен
+                        </label>
+                        <label class="status-option">
+                            <input type="checkbox" name="status" value="rejected">
+                            <span class="checkmark"></span>
+                            Не принят
+                        </label>
+                    </div>
+                    <button class="btn-primary" onclick="updateStatus()">Обновить статус</button>
+                </div>
+
+                <div class="recommendations-section">
+                    <h3>🤖 Рекомендации системы</h3>
+                    <div class="recommendations">
+                        <div class="recommendation-item positive">
+                            <span class="recommendation-icon">✅</span>
+                            <span class="recommendation-text">Принять на работу</span>
+                        </div>
+                        <div class="recommendation-item neutral">
+                            <span class="recommendation-icon">📚</span>
+                            <span class="recommendation-text">Отправить на дообучение</span>
+                        </div>
+                        <div class="recommendation-item positive">
+                            <span class="recommendation-icon">📈</span>
+                            <span class="recommendation-text">Рассмотреть возможность повышения</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="report.js"></script>
+</body>
+</html>

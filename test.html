@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamTeam - Тестирование</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div class="test-container">
+        <header class="test-header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>DreamTeam</h1>
+                </div>
+                <div class="test-info">
+                    <div class="timer">
+                        <span class="timer-label">Время:</span>
+                        <span id="timer" class="timer-display">60:00</span>
+                    </div>
+                    <div class="progress">
+                        <span class="progress-label">Вопрос:</span>
+                        <span id="currentQuestion">1</span>
+                        <span class="progress-separator">из</span>
+                        <span id="totalQuestions">20</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="test-content">
+            <div class="question-container">
+                <div class="question-header">
+                    <h2 id="questionText">Загрузка вопроса...</h2>
+                </div>
+
+                <div class="answers-container" id="answersContainer">
+                    <div class="loading">Загрузка вариантов ответов...</div>
+                </div>
+
+                <div class="question-navigation">
+                    <button id="prevBtn" class="nav-btn" onclick="previousQuestion()">Назад</button>
+                    <button id="nextBtn" class="nav-btn" onclick="nextQuestion()">Далее</button>
+                    <button id="submitBtn" class="submit-btn" onclick="submitTest()" style="display: none;">Сдать тест</button>
+                </div>
+            </div>
+
+            <div class="question-indicators">
+                <div class="indicators-grid" id="indicatorsGrid">
+                </div>
+            </div>
+        </main>
+
+        <div id="warningModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h3>⚠️ Внимание!</h3>
+                <p>Обнаружено переключение окна/вкладки. При повторном переключении тест будет автоматически сдан.</p>
+                <button class="btn-primary" onclick="closeWarning()">Понятно</button>
+            </div>
+        </div>
+
+        <div id="submitModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h3>Подтверждение сдачи теста</h3>
+                <p>Вы уверены, что хотите сдать тест? После сдачи изменить ответы будет невозможно.</p>
+                <div class="modal-buttons">
+                    <button class="btn-secondary" onclick="closeSubmitModal()">Отмена</button>
+                    <button class="btn-primary" onclick="confirmSubmit()">Сдать тест</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="test.js"></script>
+</body>
+</html>

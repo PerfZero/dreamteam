@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamTeam - Тест завершен</title>
+    <link rel="stylesheet" href="test-complete.css">
+</head>
+<body>
+    <div class="container">
+        <div class="completion-card">
+            <div class="logo">
+                <h1>DreamTeam</h1>
+            </div>
+            
+            <div class="completion-header">
+                <div class="success-icon">✓</div>
+                <h2>Тест завершен!</h2>
+                <p>Спасибо за прохождение тестирования</p>
+            </div>
+
+            <div class="results-summary">
+                <div class="result-item">
+                    <span class="result-label">Отвечено вопросов:</span>
+                    <span class="result-value" id="answeredQuestions">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Всего вопросов:</span>
+                    <span class="result-value" id="totalQuestions">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Процент завершения:</span>
+                    <span class="result-value" id="completionRate">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Время выполнения:</span>
+                    <span class="result-value" id="timeSpent">-</span>
+                </div>
+            </div>
+
+            <div class="completion-message">
+                <p>Ваши результаты будут обработаны и отправлены работодателю. Обычно это занимает несколько минут.</p>
+                <p>Вы можете закрыть эту страницу.</p>
+            </div>
+
+            <div class="completion-actions">
+                <button class="btn-primary" onclick="closeWindow()">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="test-complete.js"></script>
+</body>
+</html>

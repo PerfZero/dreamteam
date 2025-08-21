@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamTeam - Оплата</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>DreamTeam</h1>
+                </div>
+                <nav class="breadcrumb">
+                    <a href="dashboard.html">Личный кабинет</a>
+                    <span class="separator">/</span>
+                    <a href="dashboard.html#tariffs">Тарифы и оплата</a>
+                    <span class="separator">/</span>
+                    <span class="current">Оплата</span>
+                </nav>
+                <div class="user-menu">
+                    <span class="user-name">Иван Петров</span>
+                    <button class="logout-btn" onclick="logout()">Выйти</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="payment-container">
+                <div class="payment-header">
+                    <h1>Оплата пакета</h1>
+                    <p>Выберите способ оплаты и завершите покупку</p>
+                </div>
+
+                <div class="payment-content">
+                    <div class="package-summary">
+                        <h2>Выбранный пакет</h2>
+                        <div class="package-details" id="packageDetails">
+                            <div class="package-name">Загрузка...</div>
+                            <div class="package-price">Загрузка...</div>
+                            <div class="package-tests">Загрузка...</div>
+                        </div>
+                    </div>
+
+                    <div class="payment-methods">
+                        <h2>Способ оплаты</h2>
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="card" checked>
+                                <span class="radio-custom"></span>
+                                <div class="payment-info">
+                                    <div class="payment-icon">💳</div>
+                                    <div class="payment-text">
+                                        <span class="payment-title">Банковская карта</span>
+                                        <span class="payment-desc">Visa, MasterCard, МИР</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="sbp">
+                                <span class="radio-custom"></span>
+                                <div class="payment-info">
+                                    <div class="payment-icon">📱</div>
+                                    <div class="payment-text">
+                                        <span class="payment-title">СБП (Система быстрых платежей)</span>
+                                        <span class="payment-desc">Быстрая оплата через приложение банка</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card-payment-form" id="cardForm">
+                        <h2>Данные карты</h2>
+                        <form id="paymentForm">
+                            <div class="form-group">
+                                <label for="cardNumber">Номер карты</label>
+                                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiryDate">Срок действия</label>
+                                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" maxlength="5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cardholderName">Имя держателя карты</label>
+                                <input type="text" id="cardholderName" name="cardholderName" placeholder="IVAN PETROV" required>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="sbp-payment-form" id="sbpForm" style="display: none;">
+                        <h2>Оплата через СБП</h2>
+                        <div class="sbp-info">
+                            <p>Для оплаты через СБП:</p>
+                            <ol>
+                                <li>Нажмите кнопку "Оплатить"</li>
+                                <li>Откроется QR-код для сканирования</li>
+                                <li>Отсканируйте QR-код в приложении вашего банка</li>
+                                <li>Подтвердите оплату в приложении</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="payment-summary">
+                        <div class="summary-item">
+                            <span>Пакет:</span>
+                            <span id="summaryPackage">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Количество тестов:</span>
+                            <span id="summaryTests">-</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>Итого к оплате:</span>
+                            <span id="summaryTotal">-</span>
+                        </div>
+                    </div>
+
+                    <div class="payment-actions">
+                        <button class="btn-secondary" onclick="goBack()">Назад</button>
+                        <button class="btn-primary" onclick="processPayment()" id="payButton">
+                            <span class="btn-text">Оплатить</span>
+                            <span class="btn-loading" style="display: none;">Обработка...</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="qrModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Оплата через СБП</h3>
+            <div class="qr-code">
+                <div class="qr-placeholder">
+                    <span>QR-код</span>
+                    <small>Сканируйте в приложении банка</small>
+                </div>
+            </div>
+            <p>Отсканируйте QR-код в приложении вашего банка для завершения оплаты</p>
+            <button class="btn-secondary" onclick="closeQRModal()">Закрыть</button>
+        </div>
+    </div>
+
+    <script src="payment.js"></script>
+</body>
+</html>
